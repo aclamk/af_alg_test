@@ -1,5 +1,7 @@
 #
 # af_alg_perf
-# For proper work af_alg_perf requires "sysctl net.core.wmem_max=1000000".
+# For proper work af_alg_perf requires 
+# 1) "sysctl net.core.wmem_max=1000000".
+# 2) /proc/sys/fs/pipe-max-size must be at least 1000000
 # Otherwise the test will assert. 
 # The high value of wmem is required to enqueue data to crypto socket.

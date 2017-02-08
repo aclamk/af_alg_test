@@ -76,7 +76,7 @@ int main(int argc, char** argv)
 			int fds[2];
 			r = ::pipe(fds);
 			assert(r == 0);
-			r = ::fcntl(fds[1], F_SETPIPE_SZ, chunk_size*2);
+			r = ::fcntl(fds[1], F_SETPIPE_SZ, chunk_size);
 			assert(r >= chunk_size);
 
 			r = setsockopt(fd, SOL_SOCKET, SO_SNDBUF, &chunk_size, sizeof(int));
